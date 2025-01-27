@@ -1,0 +1,15 @@
+# Cet exemple illustre le test d'une ligne de commande. La fonction C "system()"
+# exécute le fichier binaire "multiplication" préalablement compilée dans le 
+# même sous-répertoire
+# Pré-requis : CUnit est installé
+#     - sous Ubuntu : sudo apt install libcunit1 libcunit1-doc libcunit1-dev
+#     - sous Alpine : apk add libc-dev cunit-dev
+
+# compilez d'abord multiplication.c
+gcc erreur.c nombre.c multiplication.c -o multiplication
+
+# compilez testsuite.c
+gcc testsuite.c -lcunit -o testsuite
+
+# lancez la testsuite
+./testsuite.c
