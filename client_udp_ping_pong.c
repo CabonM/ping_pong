@@ -22,7 +22,7 @@ void erreur(const char *message) {
 }
 
 int main(int argc, char** argv) {
-    traiter_commande(argc == 4, argv[0], "<adresse IP> <port> <message>\nmauvais nombre d'arguments");
+    traiter_commande(argc == 4, argv[0], "127.0.0.1:8080 <message>\nmauvais nombre d'arguments");
     traiter_commande(inet_addr(argv[1]) != INADDR_NONE, argv[0], "<adresse IP> <port> <message>\n<adresse IP> est une adresse IP au format décimal pointé");
     traiter_commande(atoi(argv[2]) > 1024 && atoi(argv[2]) < 65536, argv[0], "<adresse IP> <port> <message>\n<port> est un port non réservé");
 
