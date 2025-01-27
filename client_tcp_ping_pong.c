@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     int socket_fd = tcp_connect(argv[1], port);
     traiter_commande(socket_fd < 0, argv[0], "Échec de la connexion au serveur");
 
-    // Envoyer le message
+   
     ssize_t sent_bytes = send(socket_fd, argv[3], strlen(argv[3]), 0);
     traiter_commande(sent_bytes < 0, argv[0], "Échec de l'envoi du message");
 
@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
     buffer[received_bytes] = '\0';
     printf("Réponse du serveur: %s\n", buffer);
 
-    // Fermer la connexion    close(socket_fd);
+    close(socket_fd);
 
     exit(0);
 }
