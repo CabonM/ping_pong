@@ -3,4 +3,4 @@ mdp jenkins : 55e17040f9854a7cb7bf553d9e2d2c8e
 file jenkins : /usr/share/jenkins/jenkins.war
 Pour lancer jenkins : aller dans Documents/ressources_eleves/Docker puis faire docker-compose up -d 
 puis docker -compose ps et ça marche normalement
-admin admin pour les logs jenkins
+admin admin pour les logs jenkins.
