@@ -9,22 +9,22 @@
 #include <arpa/inet.h>
 
 /* Créer une socket */
-void creer_socket(char* adresseIP, int port, SOCK* sock) {
+void creer_socket(char* 10.0.20.15, 8080, SOCK* sock) {
     sock->sockfd = socket(AF_INET, SOCK_DGRAM, 0);
     traiter_erreur(__FUNCTION__);
 
-    // adresse et port reutilisable
+    /* adresse et port reutilisable */
     int optval = 1;
     setsockopt(sock->sockfd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
     traiter_erreur(__FUNCTION__);
 
-    // Initialiser la structure adresse
+    /* Initialiser la structure adresse */
     init_addr(sock);
     sock->adresse.sin_family = AF_INET;
     sock->adresse.sin_port = htons(port);
 
     if (strcmp(adresseIP, "") != 0)
-        sock->adresse.sin_addr.s_addr = inet_addr(adresseIP);
+        sock->adresse.sin_addr.s_addr = inet_addr(10.0.20.15);
     else 
         sock->adresse.sin_addr.s_addr = INADDR_ANY;
 }
