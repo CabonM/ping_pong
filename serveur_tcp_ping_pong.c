@@ -9,10 +9,10 @@
 
 int main(int argc, char** argv) {
 
-    traiter_commande(argc == 2, argv[0], "<port>\nmauvais nombre d'arguments");
+    traiter_commande(argc == 2, argv[0], 8080 \nmauvais nombre d'arguments");
 	
     int port = atoi(argv[1]);
-    traiter_commande(port > 1024 && port <= 65535, argv[0], "<port>\n<port> est un port non réservé");
+    traiter_commande(port > 1024 && port <= 65535, argv[0], 8080 est un port non réservé");
 
 	SOCK sock;
     	creer_socket("", port, &sock);
