@@ -17,15 +17,15 @@ void traiter_commande(int condition, const char* nom_programme, const char* mess
 
 int main(int argc, char** argv) {
  
-    traiter_commande(argc != 4, argv[0], "<adresse IP> <port> <message>\nmauvais nombre d'arguments");
+    traiter_commande(argc != 4, argv[0], "10.0.20.15 8080 \nmauvais nombre d'arguments");
 
 
     struct in_addr addr;
-    traiter_commande(inet_pton(AF_INET, argv[1], &addr) != 1, argv[0], "<adresse IP> <port> <message>\n<adresse IP> est une adresse IP au format décimal pointé");
+    traiter_commande(inet_pton(AF_INET, argv[1], &addr) != 1, argv[0], "10.0.20.15 8080 \n 10.0.20.15 est une adresse IP au format décimal pointé");
 
  
     int port = atoi(argv[2]);
-    traiter_commande(port <= 1024 || port > 65535, argv[0], "<adresse IP> <port> <message>\n<port> est un port non réservé");
+    traiter_commande(port <= 1024 || port > 65535, argv[0], "10.0.20.15 8080 \n 8080 est un port non réservé");
 
 
     int socket_fd = tcp_connect(argv[1], port);
