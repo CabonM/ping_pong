@@ -17,11 +17,11 @@ void traiter_commande(int condition, const char* programme, const char* message)
 
 int main(int argc, char** argv) {
 
-    traiter_commande(argc == 2, argv[0], "<port>\nmauvais nombre d'arguments");
+    traiter_commande(argc == 2, argv[0], " 8080 \n mauvais nombre d'arguments");
 
 
     int port = atoi(argv[1]);
-    traiter_commande(port > 1024 && port <= 65535, argv[0], "<port>\n<port> est un port non réservé");
+    traiter_commande(port > 1024 && port <= 65535, argv[0], " 8080 est un port non réservé");
 
 
     SOCK sock;
